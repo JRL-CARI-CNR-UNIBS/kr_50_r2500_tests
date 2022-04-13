@@ -1,0 +1,29 @@
+arbitrator_params:
+  # Structure
+  action_name:
+    skill_name:
+      skill_type: "type"
+      tests:
+      - {
+          params: {  param1: "param", param2: "param", param3: "param"},
+          outputs: {cost: 32492, time: 0.0, tests_number: 3242}
+        }
+      - {
+          params: {param1: "param", param2: "param", param3: "param"},
+          cost: 09898,
+          tests_number: 9000
+        }
+  action_name2:
+    skill_name2:
+      skill_type: "type"
+      tests:
+      - {
+          params: {param1: "param", param2: "param", param3: "param"},
+          cost: 32492,
+          tests_number: 3242
+        }
+      - {
+          params: {param1: "param", param2: "param", param3: "param"},
+          cost: 09898,
+          tests_number: 9000
+        }

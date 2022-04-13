@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/collection_name.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/exec_params.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/arbitrator_params.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/learning_params.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/policy_params.yaml"/>
+</launch>

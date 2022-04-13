@@ -1,0 +1,20 @@
+learning_params:
+  # Structure
+  action_name:
+    skill_name:
+      skill_type: "type"
+      exploration: "explor"
+      exploitation: "exploi"
+    skill_name3:
+      skill_type: "type"
+      exploration: "explor"
+      exploitation: "exploi"
+  action_name2:
+    skill_name2:
+      skill_type: "type"
+      exploration: "explor"
+      exploitation: "exploi"
+    skill_name4:
+      skill_type: "type"
+      exploration: "explor"
+      exploitation: "exploi"

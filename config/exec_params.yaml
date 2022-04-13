@@ -1,0 +1,54 @@
+exec_params:
+  # # Structure
+  # action_name:
+  #   skill_name:
+  #     skill_type: "type"
+  #     param1: "param1"
+  #     param2: "param2"
+  #     param3: "param3"
+  #     param4: "param4"
+
+  take_coke:
+    leave_coke:
+      skill_type: "cart_move"
+      frame_id: "link6"
+      twist_move: [-0.01,0.0,0.0,0.0,0.0,0.0]
+      move_time: 3.0
+  insert_coke:
+    approach_cart_move:
+      skill_type: "cart_move"
+      frame_id: "link6"
+      twist_move: [0.01,0.0,0.0,0.0,0.0,0.0]
+      move_time: 0.5
+    approach_st:
+      skill_type: "simple_touch"
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.005,0.0,0.0,0.0,0.0,0.0]
+      target_wrench: [10]
+      wrench_toll: [0.1,0.0,0.0,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]
+    first_plane_st:
+      skill_type: "simple_touch"
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.0,0.005,0.0,0.0,0.0,0.0]
+      target_wrench: [15]
+      wrench_toll: [0.0,0.1,0.0,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]
+    second_plane_st:
+      skill_type: "simple_touch"
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.0,0.0,0.005,0.0,0.0,0.0]
+      target_wrench: [20]
+      wrench_toll: [0.0,0.0,0.1,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]
+    insert_st:
+      skill_type: "simple_touch"
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.005,0.0,0.0,0.0,0.0,0.0]
+      target_wrench: [30]
+      wrench_toll: [0.1,0.0,0.0,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]

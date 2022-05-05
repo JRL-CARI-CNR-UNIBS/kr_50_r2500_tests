@@ -3,19 +3,20 @@
 <launch>
   <arg name="gazebo" default="true" />
 
-  <include if = "$(arg gazebo)" file="$(find kr_50_r2500_gazebo)/launch/kr_50_r2500.launch" />
+  <include if = "$(arg gazebo)" file="$(find kr_50_r2500_tests)/launch/gazebo_launch/kr_50_r2500_gazebo_coke.launch" />
   <include file="$(find kr_50_r2500_configurations)/launch/simulation.launch">
     <arg name="gazebo" value="$(arg gazebo)"/>
   </include>
   <include file="$(find kr_50_r2500_tests)/launch/goto.launch" />
-  <include file="$(find kr_50_r2500_tests)/launch/coke_scene_spawner.launch" />
+  <include file="$(find kr_50_r2500_tests)/launch/rviz_scene_launch/scene_spawner_coke.launch" />
 
-  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/collection_name.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/params/collection_name.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_tests)/config/params/exec_params.yaml"/>
 
-  <node name="skills_exec_node" pkg="action_learning_tests" type="skills_exec_node"/>
-  <node name="skills_policy_node" pkg="action_learning_tests" type="skills_policy_node"/>
+  <node name="skills_exec_node" pkg="skills_executer" type="skills_exec_node"/>
+  <!-- <node name="skills_policy_node" pkg="action_learning_tests" type="skills_policy_node"/>
   <node name="skills_learning_node" pkg="action_learning_tests" type="skills_learning_node"/>
-  <node name="skills_arbitrator_node" pkg="action_learning_tests" type="skills_arbitrator_node"/>
+  <node name="skills_arbitrator_node" pkg="action_learning_tests" type="skills_arbitrator_node"/> -->
   <node name="param_mongo_utils" pkg="kr_50_r2500_tests" type="param_mongo_utils.py"/>
 
 </launch>

@@ -8,6 +8,46 @@ exec_params:
   #     param3: "param3"
   #     param4: "param4"
 
+  gripper_test:
+    gripper_open_1:
+      skill_type: "gripper_move"
+      torque: 1.0
+    gripper_close_1:
+      skill_type: "gripper_move"
+      torque: -1.0
+  test:
+    go_to_start:
+      location_name: ["coke"]
+    move_z:
+      skill_type: "cart_move"
+      frame_id: "open_tip"
+      twist_move: [0.0,0.0,-0.05,0.0,0.0,0.0]
+      move_time: 3.0
+    # move_x1:
+    #   skill_type: "cart_move"
+    #   frame_id: "open_tip"
+    #   twist_move: [-0.05,0.0,0.0,0.0,0.0,0.0]
+    #   move_time: 3.0
+    move_x1:
+      skill_type: "cart_move"
+      frame_id: "world"
+      twist_move: [0.0,-0.05,0.0,0.0,0.0,0.0]
+      move_time: 3.0
+    move_x2:
+      skill_type: "cart_move"
+      frame_id: "open_tip"
+      twist_move: [0.05,0.0,0.0,0.0,0.0,0.0]
+      move_time: 3.0
+    move_y1:
+      skill_type: "cart_move"
+      frame_id: "open_tip"
+      twist_move: [0.0,-0.05,0.0,0.0,0.0,0.0]
+      move_time: 3.0
+    move_y2:
+      skill_type: "cart_move"
+      frame_id: "open_tip"
+      twist_move: [0.0,0.05,0.0,0.0,0.0,0.0]
+      move_time: 3.0
   take_coke:
     leave_coke:
       skill_type: "cart_move"
@@ -52,3 +92,10 @@ exec_params:
       target_wrench: [30]
       wrench_toll: [0.1,0.0,0.0,0.0,0.0,0.0]
       wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]
+  presa_chiave:
+    avvicinati:
+      skil_type:"cart_move"
+
+
+    chiudi_pinza:
+      skill_type

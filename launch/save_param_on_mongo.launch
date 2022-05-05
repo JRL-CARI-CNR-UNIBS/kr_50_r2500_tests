@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-  <rosparam command="load" file="$(find kr_50_r2500_test)/config/collection_name.yaml"/>
-  <rosparam command="load" file="$(find kr_50_r2500_test)/config/exec_params.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_test)/config/params/collection_name.yaml"/>
+  <rosparam command="load" file="$(find kr_50_r2500_test)/config/params/exec_params.yaml"/>
   <node name="save_param_on_mongo" type="save_param_on_mongo.py" pkg="kr_50_r2500_test" />
 </launch>
